@@ -6,6 +6,7 @@ function* rootSaga() {
     console.log('In rootSaga');
     yield all(
         [
+            getGenresSaga(),
             getMoviesSaga(),
             postMoviesSaga(),
         ]
