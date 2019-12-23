@@ -42,16 +42,91 @@ VALUES
 -- starter genres
 INSERT INTO "genres" ("name")
 VALUES 
-('Adventure'),
-('Animated'),
-('Biographical'),
-('Comedy'),
-('Disaster'),
-('Drama'),
-('Epic'),
-('Fantasy'),
-('Musical'),
-('Romantic'),
-('Science Fiction'),
-('Space-Opera'),
-('Superhero');
+('Adventure'),--1
+('Animated'),--2
+('Biographical'),--3
+('Comedy'),--4
+('Disaster'),--5
+('Drama'),--6
+('Epic'),--7
+('Fantasy'),--8
+('Musical'),--9
+('Romantic'),--10
+('Science Fiction'),--11
+('Space-Opera'),--12
+('Superhero');--13
+
+
+-- movie_genres junction table
+CREATE TABLE "movie_genres"
+(
+  "id" SERIAL PRIMARY KEY,
+  "movies_id" INT REFERENCES "movies",
+  "genres_id" INT REFERENCES "genres"
+);
+-- adding relationship between both tables
+INSERT INTO "movie_genres"
+  ("movies_id", "genres_id")
+VALUES
+  (1, 1),
+  (1, 6),
+  (1, 8),
+  (1, 11),
+  (2, 2),
+  (2, 6),
+  (2, 8),
+  (2, 9),
+  (2, 10),
+  (2, 11),
+  (3, 1),
+  (3, 6),
+  (3, 7),
+  (3, 8),
+  (3, 11),
+  (3, 13),
+  (4, 1),
+  (4, 2),
+  (4, 3),
+  (4, 8),
+  (4, 11),
+  (5, 6),
+  (6, 1),
+  (6, 6),
+  (6, 8),
+  (6, 11),
+  (7, 1),
+  (7, 6),
+  (7, 7),
+  (8, 3),
+  (8, 5),
+  (8, 6),
+  (8, 7),
+  (9, 1),
+  (9, 2),
+  (9, 4),
+  (9, 8),
+  (9, 11),
+  (9, 12),
+  (10, 1),
+  (10, 5),
+  (10, 6),
+  (10, 7),
+  (10, 8),
+  (10, 11),
+  (10, 12),
+  (10, 13),
+  (11, 1),
+  (11, 5),
+  (11, 6),
+  (11, 11),
+  (12, 3),
+  (12, 6),
+  (13, 1),
+  (13, 3),
+  (13, 5),
+  (13, 6),
+  (13, 9),
+  (13, 10),
+  (14, 1),
+  (14, 2),
+  (14, 4);
