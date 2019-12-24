@@ -5,10 +5,14 @@ const port = process.env.PORT || 5000;
 
 /** ---------- MIDDLEWARE ---------- **/
 app.use(bodyParser.json()); // needed for angular requests
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Serve static files
 app.use(express.static('build'));
 
 /** ---------- ROUTES ---------- **/
-
+const Router = require('./routes/movies.router');
+app.use('/api/movies', Router);
 
 /** ---------- START SERVER ---------- **/
 app.listen(port, function () {
