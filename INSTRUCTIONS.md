@@ -55,8 +55,8 @@ The Details Page should have the buttons:
 
 This should show:
 
-[ ] an input field (for changing the movie title), for the selected movie.
-[ ] a textarea (for changing the movie description)
+[ ] an input field for changing the movie title for the selected movie.
+[ ] an input field for changing the movie description for the selected movie.
 
 The Edit Page should have the buttons:
 
@@ -72,10 +72,10 @@ The Edit Page should have the buttons:
 As one of your last projects, it's possible you will be sharing this with employers, so be sure to follow best practices and make it look good!
 
 - [ ] Invest some time in styling it up!
-- [ ] Research grids for you movie posters on the Move List page
+- [ ] Research grids for you movie posters on the Move List         page
 - [ ] Add route change animations
-- [ ] Commit your code frequently! You should have at 15+ commits on a project of this size. Use branches to help break down your               features.
-- [ ] Update this README to include a description of the project in your own words.
+- [ ] Commit your code frequently! You should have at 15+           commits on a project of this size. Use branches to              help break down your features.
+- [ ] Update this README to include a description of the            project in your own words.
 
 ## Stretch Goals
 
