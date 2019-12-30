@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const Router = require('./routes/movies.router');
+const putRouter = require('.routes/put.movies.router');
 const port = process.env.PORT || 5000;
 
 /** ---------- MIDDLEWARE ---------- **/
@@ -11,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('build'));
 
 /** ---------- ROUTES ---------- **/
-const Router = require('./routes/movies.router');
+app.use('/api/put.movies', putRouter);
 app.use('/api/movies', Router);
 
 /** ---------- START SERVER ---------- **/

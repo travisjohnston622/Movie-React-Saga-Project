@@ -7,9 +7,9 @@ const pool = require('../modules/pool');
 router.put('/description/:id', (req, res) => {
 
     const movieId = req.params.id;
-    const editDiscription = req.body.description;
-    console.log(movieId, editDiscription);
-    const queryString = `UPDATE "movies" SET "description" = ‘${editDiscription}’ 
+    const newDescription = req.body.description;
+    console.log(movieId, newDescription);
+    const queryString = `UPDATE "movies" SET "description" = ‘${newDescription}’ 
         WHERE "id" = $1;`;
 
     pool.query(queryString, [movieId])
@@ -26,8 +26,8 @@ router.put('/description/:id', (req, res) => {
 
 router.put('/title/:id', (req, res) => {
     const movieId = req.params.id;
-    const editTitle = req.body.title;
-    const queryString = `UPDATE "movies" SET "title" = '${editTitle}'
+    const newTitle = req.body.title;
+    const queryString = `UPDATE "movies" SET "title" = '${newTitle}'
         WHERE "movies".id = $1;`;
     pool.query(queryString, [movieId])
         .then((response) => {
