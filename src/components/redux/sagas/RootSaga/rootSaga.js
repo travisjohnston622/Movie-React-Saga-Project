@@ -1,14 +1,13 @@
 import { all } from 'redux-saga/effects';
 import getMoviesSaga from '..GetMoviesSaga/getMoviesSaga';
-import postMoviesSaga from '..PostMoviesSaga/postMoviesSaga';
+import putMoviesSaga from '..PutMoviesSaga/putMoviesSaga';
 
 function* rootSaga() {
     console.log('In rootSaga');
     yield all(
         [
-            getGenresSaga(),
             getMoviesSaga(),
-            postMoviesSaga(),
+            putMoviesSaga(),
         ]
     );
 }
